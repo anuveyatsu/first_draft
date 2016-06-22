@@ -1,0 +1,12 @@
+<h1 class="text-center">Login to your account</h1>
+<div class="jumbotron text-center">
+<%= form_for(:user, url: sessions_path) do |f| %>
+  <div class="field"><%= f.label :name %> <%= f.text_field :name, :class => 'form-control' %></div>
+  <p>
+  <div class="field"><%= f.label :password %> <%= f.password_field :password, :class => 'form-control' %></div>
+  <p>
+  
+  <div class="actions"><%= f.submit "Login", :class => 'btn btn-danger' %></div>
+
+<% end %>
+</div>
