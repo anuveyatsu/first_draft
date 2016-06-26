@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'signup/index'
+  get 'signup/index', as: 'signup'
 
   get 'account/index', as: 'account'
   get 'account/seller', as: 'account_seller'
