@@ -1,16 +1,17 @@
 class SessionsController < ApplicationController
   skip_before_action :ensure_login, only: [:new, :create]
   def new
-    
+    if session[:user_id]
+        redirect_to account_path
+    end
   end
 
   def create
     user = User.find_by(name: params[:user][:name])
     password = params[:user][:password]
-
     if user && user.authenticate(password)
       session[:user_id] = user.id
-      redirect_to account_path, notice: "Logged in successfully"
+      redirect_to account_path
     else
       redirect_to login_path, alert: "Invalid username/password combination"
     end

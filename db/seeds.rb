@@ -9,8 +9,8 @@
 User.destroy_all
 
 users = User.create! [
-  { name: "Anuar", password: "abc123" }, #admin
-  { name: "Meiran", password: "abc123" }, #seller
-  { name: "Aigerim", password: "abc123" }, #courier
-  { name: "Dara", password: "abc123" } #pickup
+  { name: "Anuar", password: "abc123", category: "seller" }, #admin
+  { name: "Meiran", password: "abc123", category: "pick-up" }, #seller
+  { name: "Aigerim", password: "abc123", category: "courier" }, #courier
+  { name: "Dara", password: "abc123", category: "seller" } #pickup
 ]

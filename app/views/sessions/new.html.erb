@@ -1,3 +1,4 @@
+
 <h1 class="text-center">Login to your account</h1>
 <div class="jumbotron text-center">
 <%= form_for(:user, url: sessions_path) do |f| %>
@@ -5,8 +6,15 @@
   <p>
   <div class="field"><%= f.label :password %> <%= f.password_field :password, :class => 'form-control' %></div>
   <p>
-  
-  <div class="actions"><%= f.submit "Login", :class => 'btn btn-danger' %></div>
-
+<!--
+  <div>
+    <%= f.label :category %>
+    <%= f.radio_button :category, 'seller' %> Seller
+    <%= f.radio_button :category, 'pick-up' %> Pick-up
+    <%= f.radio_button :category, 'courier' %> Courier
+  </div>
+-->
+  <div class="actions"><%= f.submit "Login", :class => 'btn btn-danger' %> <button class="btn btn-default btn-md"><a href="/signup/index">Sign Up</a></button></div>
 <% end %>
+
 </div>

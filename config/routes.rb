@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
 
-  get 'account/index', as: "account"
+  get 'signup/index'
+
+  get 'account/index', as: 'account'
+  get 'account/seller', as: 'account_seller'
+  get 'account/pickup', as: 'account_pickup'
+  get 'account/courier', as: 'account_courier'
 
   resources :sessions, only: [:new, :create, :destroy]
 
